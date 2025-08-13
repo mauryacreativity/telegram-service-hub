@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Admins — Telegram Service Hub</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="Admin directory for Telegram Service Hub. Click to open Telegram chat.">
+  <meta name="theme-color" content="#ffd700"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body { background:#05060a; color:#e6eef8; }
+    .gold-btn { background: linear-gradient(90deg,#ffd700,#ffb400); color:#071018; font-weight:700; }
+    .focus-gold:focus-visible { outline: 3px solid rgba(255,215,0,0.22); outline-offset:3px; border-radius:8px;}
+  </style>
+</head>
+<body class="antialiased min-h-screen">
+
+  <header class="border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div>
+        <div class="text-lg font-semibold">Admins — Telegram Service Hub</div>
+        <div class="text-xs text-slate-400">Click a username to open Telegram</div>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="px-3 py-2 rounded-lg border border-slate-700 hover:bg-slate-800">Home</a>
+        <a href="https://t.me/+iAkPUWStKh81ZjI9" target="_blank" rel="noopener" class="px-3 py-2 rounded-lg gold-btn focus-gold">Join Group</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <div class="flex items-center justify-between mb-4">
+      <div>
+        <h1 class="text-2xl font-bold">Admin Directory</h1>
+        <p class="text-slate-400 text-sm">Search, filter and contact any admin directly.</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <input id="search" placeholder="Search @username or number" class="rounded-lg px-3 py-2 bg-slate-800 border border-slate-700" />
+        <button id="copyAll" class="px-3 py-2 rounded-lg border border-slate-700 hover:bg-slate-800">Copy All</button>
+      </div>
+    </div>
+
+    <div id="grid" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- JS renders cards -->
+    </div>
+  </main>
+
+  <footer class="text-center text-slate-400 py-6 border-t border-slate-800">
+    © 2025 Telegram Service Hub. All rights reserved.
+  </footer>
+
+  <script>
+    const admins = [
+      {n:1, u:'AartiMeenaPaidGril', role:'Admin'},
+      {n:2, u:'P_zompopooja', role:'Admin'},
+      {n:3, u:'Ruhiii101', role:'Admin'},
+      {n:4, u:'ra16d', role:'Admin'},
+      {n:5, u:'Nainiservicepoint', role:'Admin'},
+      {n:6, u:'Divyapaiidgirl', role:'Admin'},
+      {n:7, u:'Shakshiherr', role:'Admin'},
+      {n:8, u:'Payalukumari', role:'Leader'},
+      {n:9, u:'Mizoo257', role:'Admin'},
+      {n:10,u:'worldexplorer_0', role:'Owner'}
+    ];
+
+    const grid = document.getElementById('grid');
+    function render(list){
+      grid.innerHTML = '';
+      list.forEach(it=>{
+        const card = document.createElement('a');
+        card.href = `https://t.me/${it.u}`;
+        card.target='_blank'; card.rel='noopener';
+        card.className = 'flex items-center justify-between p-4 rounded-lg bg-slate-800 border border-slate-700 hover:border-yellow-400 transition';
+        card.innerHTML = `<div class="flex items-center gap-3"><div class="w-12 h-12 rounded-md bg-yellow-300 text-black flex items-center justify-center font-semibold">${it.n}</div>
+                          <div><div class="font-medium">@${it.u}</div><div class="text-xs text-slate-400">${it.role}</div></div></div>
+                          <div class="text-yellow-300">→</div>`;
+        grid.appendChild(card);
+      });
+    }
+    render(admins);
+
+    // Search
+    document.getElementById('search').addEventListener('input', (e)=>{
+      const q = e.target.value.trim().toLowerCase();
+      if(!q) return render(admins);
+      render(admins.filter(a => a.u.toLowerCase().includes(q) || String(a.n)===q));
+    });
+
+    // Copy all
+    document.getElementById('copyAll').addEventListener('click', async ()=>{
+      try{
+        const text = admins.map(a=> `${a.n}. @${a.u} (${a.role})`).join('\n');
+        await navigator.clipboard.writeText(text);
+        const b = document.getElementById('copyAll');
+        b.textContent = 'Copied ✓';
+        setTimeout(()=> b.textContent = 'Copy All', 1200);
+      }catch(e){ alert('Copy failed: '+e); }
+    });
+
+    window.addEventListener('DOMContentLoaded', ()=> { if(window.lucide) lucide.createIcons(); });
+  </script>
+</body>
+</html>

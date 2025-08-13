@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Telegram Service Hub — Premium</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="Premium Telegram Service Hub — contact owner, leader and admins.">
+  <meta name="theme-color" content="#ffd700"/>
+  <meta property="og:title" content="Telegram Service Hub — Premium"/>
+  <meta property="og:description" content="Premium Telegram Service Hub — contact owner, leader and admins."/>
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root{
+      --gold-1:#ffd700; --gold-2:#ffb400;
+    }
+    body { background:#07070b; color:#e6eef8; }
+    .gold-btn {
+      background: linear-gradient(90deg,var(--gold-1),var(--gold-2));
+      color:#071018; font-weight:700;
+    }
+    .gold-btn:hover { transform: translateY(-3px); box-shadow:0 12px 30px rgba(255,183,0,0.12); }
+    .glass { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); backdrop-filter: blur(6px); }
+    .focus-gold:focus-visible { outline: 3px solid rgba(255,215,0,0.22); outline-offset:3px; border-radius:10px; }
+  </style>
+</head>
+<body class="antialiased min-h-screen">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 glass border-b border-slate-700">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br from-yellow-400 to-yellow-500 shadow">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="#071018" stroke-width="1.3"/><path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="#071018" stroke-width="1.3"/></svg>
+        </div>
+        <div>
+          <div class="text-lg font-semibold">Telegram Service Hub</div>
+          <div class="text-xs text-slate-400">Premium • Verified • Secure</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="admins.html" class="px-3 py-2 rounded-lg border border-slate-700 hover:bg-slate-800 text-sm focus-gold">Admins</a>
+        <a href="#admins" class="px-3 py-2 rounded-lg border border-slate-700 hover:bg-slate-800 text-sm focus-gold">Jump to Admins</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    <section class="grid md:grid-cols-2 gap-8 items-start">
+      <div class="space-y-4">
+        <h1 class="text-3xl md:text-4xl font-extrabold">Premium Access — <span class="text-yellow-300">Owner</span>, <span class="text-yellow-300">Leader</span> & Verified Admins</h1>
+        <p class="text-slate-300 max-w-2xl">Secure, official and trusted channel to get services. Message owner, join the official group, or contact the leader directly.</p>
+
+        <div class="flex flex-wrap gap-3 mt-4">
+          <!-- Message Owner -->
+          <a id="btnOwner" class="gold-btn px-4 py-3 rounded-xl inline-flex items-center gap-2 shadow focus-gold" href="https://t.me/worldexplorer_0" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="#071018"/></svg>
+            Message Owner
+          </a>
+
+          <!-- Join Group -->
+          <a id="btnGroup" class="px-4 py-3 rounded-xl border border-slate-700 inline-flex items-center gap-2 hover:bg-slate-800 focus-gold" href="https://t.me/+iAkPUWStKh81ZjI9" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4" stroke="#e6eef8"/></svg>
+            Join Group
+          </a>
+
+          <!-- Message Leader -->
+          <a id="btnLeader" class="gold-btn px-4 py-3 rounded-xl inline-flex items-center gap-2 shadow focus-gold" href="https://t.me/Payalukumari" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l1.5 4.5L18 8l-3 2 1 4L12 12l-4 2 1-4L6 8l4.5-1.5L12 2z" stroke="#071018"/></svg>
+            Message Leader
+          </a>
+        </div>
+
+        <div class="mt-4 flex gap-3 flex-wrap">
+          <button id="takeService" class="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-semibold focus-gold">Take Service</button>
+          <a href="admins.html" class="px-4 py-2 rounded-lg border border-slate-700 hover:bg-slate-800">View Admins Page</a>
+        </div>
+      </div>
+
+      <!-- Leader Card -->
+      <aside class="rounded-2xl p-6 glass border border-slate-800 shadow-lg">
+        <div class="flex items-center gap-4">
+          <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center text-black font-bold shadow">P</div>
+          <div>
+            <div class="text-slate-400 text-sm">Main Leader</div>
+            <div class="text-xl font-semibold">Payal <span class="text-yellow-300">@Payalukumari</span></div>
+          </div>
+        </div>
+
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a class="px-3 py-2 rounded-lg gold-btn text-black font-semibold inline-flex items-center gap-2 focus-gold" href="https://t.me/Payalukumari" target="_blank" rel="noopener">
+            Message Leader
+          </a>
+
+          <button id="copyLeader" class="px-3 py-2 rounded-lg border border-slate-700 hover:bg-slate-800 focus-gold inline-flex items-center gap-2">
+            Copy ID
+          </button>
+
+          <a class="px-3 py-2 rounded-lg gold-btn text-black font-semibold inline-flex items-center gap-2 focus-gold" href="https://t.me/worldexplorer_0" target="_blank" rel="noopener">
+            Message Owner
+          </a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Inline Admins preview -->
+    <section class="mt-12" id="admins">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h2 class="text-2xl font-bold">Admins (preview)</h2>
+          <p class="text-slate-400 text-sm">Click any user to open Telegram.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <input id="searchInline" type="search" placeholder="Search admins" class="rounded-lg px-3 py-2 bg-slate-800 border border-slate-700" />
+          <a href="admins.html" class="px-3 py-2 rounded-lg border border-slate-700 hover:bg-slate-800">Open Admins Page</a>
+        </div>
+      </div>
+
+      <div id="inlineGrid" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"></div>
+    </section>
+  </main>
+
+  <!-- Floating support -->
+  <a href="https://t.me/worldexplorer_0" target="_blank" rel="noopener" class="fixed right-4 bottom-6 bg-gradient-to-br from-yellow-400 to-yellow-500 text-black px-4 py-3 rounded-full shadow-lg hover:scale-105" title="Contact Owner">Support</a>
+
+  <footer class="mt-12 border-t border-slate-800 py-6 text-center text-slate-400">
+    © 2025 Telegram Service Hub. All rights reserved.
+  </footer>
+
+  <!-- Script -->
+  <script>
+    // Admins data
+    const admins = [
+      {n:1, u:'AartiMeenaPaidGril', role:'Admin'},
+      {n:2, u:'P_zompopooja', role:'Admin'},
+      {n:3, u:'Ruhiii101', role:'Admin'},
+      {n:4, u:'ra16d', role:'Admin'},
+      {n:5, u:'Nainiservicepoint', role:'Admin'},
+      {n:6, u:'Divyapaiidgirl', role:'Admin'},
+      {n:7, u:'Shakshiherr', role:'Admin'},
+      {n:8, u:'Payalukumari', role:'Leader'},
+      {n:9, u:'Mizoo257', role:'Admin'},
+      {n:10,u:'worldexplorer_0', role:'Owner'}
+    ];
+
+    // Inline admin preview rendering
+    const inlineGrid = document.getElementById('inlineGrid');
+    function renderInline(list){
+      inlineGrid.innerHTML = '';
+      list.forEach(it => {
+        const a = document.createElement('a');
+        a.href = `https://t.me/${it.u}`;
+        a.target = '_blank'; a.rel = 'noopener';
+        a.className = 'flex items-center gap-3 p-3 rounded-lg bg-slate-800 border border-slate-700 hover:border-yellow-400';
+        a.innerHTML = `<div class="w-9 h-9 rounded-md bg-yellow-300 text-black flex items-center justify-center font-semibold">${it.n}</div>
+                       <div><div class="font-medium">@${it.u}</div><div class="text-xs text-slate-400">${it.role}</div></div>`;
+        inlineGrid.appendChild(a);
+      });
+    }
+    renderInline(admins.slice(0,8));
+
+    // Inline search
+    document.getElementById('searchInline').addEventListener('input', (e)=>{
+      const q = e.target.value.trim().toLowerCase();
+      if(!q) return renderInline(admins.slice(0,8));
+      renderInline(admins.filter(a => a.u.toLowerCase().includes(q) || String(a.n)===q).slice(0,8));
+    });
+
+    // Copy leader
+    document.getElementById('copyLeader').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText('@Payalukumari');
+        const el = document.getElementById('copyLeader');
+        el.textContent = 'Copied ✓';
+        setTimeout(()=> el.innerHTML = 'Copy ID', 1400);
+      } catch (e) { alert('Copy failed: '+e); }
+    });
+
+    // Take service: open owner chat; also open group tab (comment/uncomment as desired)
+    document.getElementById('takeService').addEventListener('click', ()=> {
+      window.open('https://t.me/worldexplorer_0', '_blank');
+      // if you also want to open the group, uncomment next line:
+      // window.open('https://t.me/+iAkPUWStKh81ZjI9','_blank');
+    });
+
+    // init lucide icons (if available)
+    window.addEventListener('DOMContentLoaded', ()=> { if(window.lucide) lucide.createIcons(); });
+  </script>
+</body>
+</html>
